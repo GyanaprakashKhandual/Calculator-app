@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/4.0.0/iconfont/material-icons.min.css"
+        rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="header">
+                <h1 class="title">Calculator</h1>
+                <div class="theme-selector">
+                    <button class="theme-button" id="themeButton">
+                        <span class="material-icons">palette</span>
+                        Theme
+                    </button>
+                    <div class="theme-dropdown" id="themeDropdown">
+                        <div class="theme-option" data-theme="dark">
+                            <div class="theme-preview" style="background: linear-gradient(45deg, #1a1a2e, #0f3460);">
+                            </div>
+                            Dark
+                        </div>
+                        <div class="theme-option" data-theme="light">
+                            <div class="theme-preview" style="background: linear-gradient(45deg, #f5f5f5, #e3f2fd);">
+                            </div>
+                            Light
+                        </div>
+                        <div class="theme-option" data-theme="neon">
+                            <div class="theme-preview" style="background: linear-gradient(45deg, #0a0a0a, #00ff88);">
+                            </div>
+                            Neon
+                        </div>
+                        <div class="theme-option" data-theme="sunset">
+                            <div class="theme-preview" style="background: linear-gradient(45deg, #2d1b69, #ff6b9d);">
+                            </div>
+                            Sunset
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="display">
+                <div class="expression" id="expression"></div>
+                <div class="result" id="result">0</div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn function" onclick="clearAll()">AC</button>
+                <button class="btn function" onclick="clearEntry()">CE</button>
+                <button class="btn function" onclick="backspace()">⌫</button>
+                <button class="btn function" onclick="insertFunction('sqrt(')">√</button>
+                <button class="btn operator" onclick="insertOperator('^')">x^y</button>
+
+                <button class="btn function" onclick="insertFunction('sin(')">sin</button>
+                <button class="btn function" onclick="insertFunction('cos(')">cos</button>
+                <button class="btn function" onclick="insertFunction('tan(')">tan</button>
+                <button class="btn function" onclick="insertFunction('log(')">log</button>
+                <button class="btn operator" onclick="insertOperator('/')">/</button>
+
+                <button class="btn function" onclick="insertFunction('ln(')">ln</button>
+                <button class="btn function" onclick="insertConstant('e')">e</button>
+                <button class="btn function" onclick="insertConstant('π')">π</button>
+                <button class="btn function" onclick="insertOperator('!')">n!</button>
+                <button class="btn operator" onclick="insertOperator('*')">×</button>
+
+                <button class="btn" onclick="insertNumber('7')">7</button>
+                <button class="btn" onclick="insertNumber('8')">8</button>
+                <button class="btn" onclick="insertNumber('9')">9</button>
+                <button class="btn function" onclick="insertOperator('(')">(</button>
+                <button class="btn operator" onclick="insertOperator('-')">-</button>
+
+                <button class="btn" onclick="insertNumber('4')">4</button>
+                <button class="btn" onclick="insertNumber('5')">5</button>
+                <button class="btn" onclick="insertNumber('6')">6</button>
+                <button class="btn function" onclick="insertOperator(')')">)</button>
+                <button class="btn operator" onclick="insertOperator('+')">+</button>
+
+                <button class="btn" onclick="insertNumber('1')">1</button>
+                <button class="btn" onclick="insertNumber('2')">2</button>
+                <button class="btn" onclick="insertNumber('3')">3</button>
+                <button class="btn function" onclick="insertOperator('mod')">mod</button>
+                <button class="btn equals" onclick="calculate()" rowspan="2">=</button>
+
+                <button class="btn zero" onclick="insertNumber('0')">0</button>
+                <button class="btn" onclick="insertOperator('.')">.</button>
+                <button class="btn function" onclick="toggleSign()">±</button>
+            </div>
+        </div>
+
+        <div class="history-panel">
+            <div class="history-header">
+                <h2 class="history-title">History</h2>
+                <button class="clear-history" onclick="clearHistory()">Clear All</button>
+            </div>
+            <div class="history-list" id="historyList">
+                <div class="empty-history">No calculations yet</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
